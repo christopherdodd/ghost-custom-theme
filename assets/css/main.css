@@ -9,7 +9,7 @@
 .header {
   padding: 20px 0;
   border: 1px solid #333;
-  background-color: #333;
+  background-color: #fff;
   color: #fff
 }
 .header__inner {
@@ -22,7 +22,7 @@
 }
 .header a {
   text-decoration: none;
-  color: #fff
+  color: #333;
 }
 .header a:hover {
   text-decoration: underline;
