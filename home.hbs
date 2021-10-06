@@ -1,0 +1,19 @@
+{{!< default}}
+
+<div class="page-width">
+    <div class="home-header">
+        <h1>
+            Welcome to {{@site.title}}
+        </h1>
+        <p>{{@site.description}}</p>
+    </div>
+    {{#get 'posts' include="tags,authors" }}
+        <h2>Latest posts</h2>
+        <div class="posts-inline">
+            {{#foreach posts limit="3" order="published_at desc"}}
+                {{> "post-card" }}
+            {{/foreach}}
+        </div>
+        
+    {{/get}}
+</div>

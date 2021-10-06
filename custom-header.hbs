@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{#post}}
+    <div class="image-header" style="background-image: url('{{img_url feature_image}}')">
+        <h1>{{ title }}</h1>
+    </div>
+
+
+    <div class="page-width">
+
+        {{^is "page"}}
+            {{> "breadcrumbs"}}
+        {{/is}}
+
+        <article class="{{post_class}}"> 
+            <header class="post-header">
+                <span>{{date published_at format="MMMM DD, YYYY" }}</span>
+            </header>
+            <section class="post-content">
+                {{content}}
+            </section>
+        </article>
+{{/post}}
+
+    {{#get 'posts' include="tags,authors" filter="primary_tag:{{post.primary_tag.slug}}+id:-{{post.id}}"}}
+        <div class="featured-posts">
+            <h2>Similar Articles</h2>
+            <div class="posts-inline">
+                <div class="posts-inline">
+                    {{#foreach posts limit="3" order="published_at desc"}}
+                        {{> "post-card" }}
+                    {{/foreach}}
+                </div>
+            </div>
+        </div>
+    {{/get}}
+</div>

@@ -1,0 +1,12 @@
+<nav class="pagination" role="navigation">
+    <ul class="pagination">
+        {{#if prev}}
+            <li class="page-item"><a class="page-link" href="{{page_url prev}}">Previous</a></li>
+        {{/if}}
+        
+        <li class="page-item"><a class="page-link">{{ page }}</a></li>
+        {{#if next}}
+            <li class="page-item"><a class="page-link" href="{{page_url next}}">Next</a></li>
+        {{/if}}
+    </ul>
+</nav>

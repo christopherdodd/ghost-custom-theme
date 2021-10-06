@@ -1,0 +1,15 @@
+{{!< default}}
+
+<div class="page-width">
+    <h1>All posts</h1>
+    <p>Here you will find all posts</p>
+
+    <div class="posts">
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </div>
+
+    {{pagination}}
+    
+</div>

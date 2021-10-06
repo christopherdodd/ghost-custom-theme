@@ -1,0 +1,33 @@
+{{!< default}}
+
+<div class="page-width">
+    <div class="page-header">
+        <h1>All posts by {{author.name}}</h1>
+        <p>Here you will find all posts by {{author.name}}</p>
+    </div>
+
+    <div class="page-with-sidebar">
+        <div>
+            {{#author}}
+                <div class="card" style="max-width: 18rem;">
+                    <img class="card-img-top" src="{{img_url profile_image}}" alt="Picture of {{name}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        {{#if bio}}<p class="card-text">{{bio}}</p>{{/if}}
+                        <div class="author-meta">
+                            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+                        </div>
+                    </div>
+                </div>
+            {{/author}}
+        </div>
+
+        <div>
+            <div class="posts">
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="post-card card">
+    {{#if feature_image}}
+        <img src="{{img_url feature_image size="m"}}"
+                {{#if feature_image_alt}}alt="{{feature_image_alt}}"{{/if}}
+                class="post-card-image card-img-top">
+    {{else}}
+        <img src="https://via.placeholder.com/399x243">
+    {{/if}}
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="{{url}}">
+                {{title}}
+            </a>
+        </h5>
+        <p class="card-text">{{ excerpt }}</p>
+        {{^is 'author'}}
+            <a class="btn btn-primary" href="{{ primary_author.url }}">By {{primary_author.name}}</a>
+        {{/is}}
+        <div class="card-tags">
+            {{tags}}
+        </div>
+    </div>
+</div>

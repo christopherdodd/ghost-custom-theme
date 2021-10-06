@@ -1,0 +1,16 @@
+{{!< default}}
+
+{{#tag}}
+    <div class="image-header" style="background-image: url('{{img_url feature_image}}')">
+        <h1>{{ name }}</h1>
+    </div>
+{{/tag}}
+
+<div class="page-width">
+    <div class="posts">
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </div>
+    
+</div>

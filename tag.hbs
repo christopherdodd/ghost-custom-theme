@@ -1,0 +1,32 @@
+{{!< default}}
+
+<div class="page-width">
+    <div class="page-header">
+        <h1>All posts with the tag of {{tag.name}}</h1>
+        <p>Here you will find all posts with the tag of {{tag.name}}</p>
+    </div>
+
+    <div class="page-with-sidebar">
+        <div>
+            {{#tag}}
+                <div class="card" style="max-width: 18rem;">
+                    {{#if feature_image }}
+                        <img class="card-img-top" src="{{img_url feature_image}}" alt="Picture for tag: {{name}}">
+                    {{/if}}
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        {{#if description}}<p class="card-text">{{description}}</p>{{/if}}
+                    </div>
+                </div>
+            {{/tag}}
+        </div>
+
+        <div>
+            <div class="posts">
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            </div>
+        </div>
+    </div>
+</div>

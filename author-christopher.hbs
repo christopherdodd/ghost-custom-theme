@@ -1,0 +1,16 @@
+{{!< default}}
+
+{{#author}}
+    <div class="image-header" style="background-image: url('{{img_url cover_image}}')">
+        <h1><small>Posts by:</small>{{ name }}</h1>
+    </div>
+{{/author}}
+
+<div class="page-width">
+    <div class="posts">
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </div>
+    
+</div>
