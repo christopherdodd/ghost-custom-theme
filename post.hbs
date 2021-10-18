@@ -20,11 +20,9 @@
         <div class="featured-posts">
             <h2>Similar Articles</h2>
             <div class="posts-inline">
-                <div class="posts-inline">
-                    {{#foreach posts limit="3" order="published_at desc"}}
-                        {{> "post-card" }}
-                    {{/foreach}}
-                </div>
+                {{#foreach posts limit="3" order="published_at desc"}}
+                    {{> "post-card" }}
+                {{/foreach}}
             </div>
         </div>
     {{/get}}

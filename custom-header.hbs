@@ -22,16 +22,18 @@
         </article>
 {{/post}}
 
-    {{#get 'posts' include="tags,authors" filter="primary_tag:{{post.primary_tag.slug}}+id:-{{post.id}}"}}
-        <div class="featured-posts">
-            <h2>Similar Articles</h2>
-            <div class="posts-inline">
+    {{#is "post" }}
+        {{#get 'posts' include="tags,authors" filter="primary_tag:{{post.primary_tag.slug}}+id:-{{post.id}}"}}
+            <div class="featured-posts">
+                <h2>Similar Articles</h2>
                 <div class="posts-inline">
-                    {{#foreach posts limit="3" order="published_at desc"}}
-                        {{> "post-card" }}
-                    {{/foreach}}
+                    <div class="posts-inline">
+                        {{#foreach posts limit="3" order="published_at desc"}}
+                            {{> "post-card" }}
+                        {{/foreach}}
+                    </div>
                 </div>
             </div>
-        </div>
-    {{/get}}
+        {{/get}}
+    {{/is}}
 </div>
