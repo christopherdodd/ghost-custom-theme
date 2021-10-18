@@ -1,18 +1,13 @@
-# Casper
+# Custom Ghost Theme (Example)
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
-
-&nbsp;
-
-![screenshot-desktop](https://user-images.githubusercontent.com/353959/66987533-40eae100-f0c1-11e9-822e-cbaf38fb8e3f.png)
-
-&nbsp;
-
+This theme has been created by using [Casper](https://github.com/TryGhost/Casper) as a starting point but removing much of the original theme's code.
 # First time using a Ghost theme?
 
 Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
 
-This theme has lots of code comments to help explain what's going on just by reading the code. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://ghost.org/docs/themes/) which explains every possible Handlebars helper and template.
+The official [theme API documentation](https://ghost.org/docs/themes/) explains every possible Handlebars helper and template.
+
+Also, you read my explanation [on my blog](https://christhefreelancer.com/ghost-theme-development-guide/)
 
 **The main files are:**
 
@@ -25,45 +20,5 @@ This theme has lots of code comments to help explain what's going on just by rea
 
 One neat trick is that you can also create custom one-off templates by adding the slug of a page to a template file. For example:
 
-- `page-about.hbs` - Custom template for an `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
-
-
-# Development
-
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
-
-```bash
-# install dependencies
-yarn install
-
-# run development server
-yarn dev
-```
-
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
-
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
-
-```bash
-# create .zip file
-yarn zip
-```
-
-# PostCSS Features Used
-
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- [Color Mod](https://github.com/jonathantneal/postcss-color-mod-function)
-
-
-# SVG Icons
-
-Casper uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
-
-You can add your own SVG icons in the same manner.
-
-
-# Copyright & License
-
-Copyright (c) 2013-2021 Ghost Foundation - Released under the [MIT license](LICENSE).
+- `tag-example-tag.hbs` - Custom template for `/tag/example-tag/` archive
+- `author-christopher.hbs` - Custom template for `/author/christopher/` archive
