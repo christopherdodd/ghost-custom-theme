@@ -6,6 +6,10 @@
   margin: auto;
 }
 
+#ghost-portal-root {
+  display: none;
+}
+
 .header {
   padding: 20px 0;
   background-color: #333;
@@ -120,6 +124,7 @@ main {
   display: flex;
   color: white;
   margin-bottom: 20px;
+  margin-top: -20px;
 }
 .image-header h1 {
   background-color: black;
@@ -137,4 +142,23 @@ main {
 .post-content img {
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .posts,
+  .home-posts,
+  .posts-inline,
+  .page-with-sidebar {
+    flex-direction: column;
+  }
+  .page-with-sidebar .card {
+    max-width: 100% !important;
+  }
+  .page-with-sidebar > div:last-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .image-header h1 {
+    margin: 10px;
+  }
 }
